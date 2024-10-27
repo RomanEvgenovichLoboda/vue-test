@@ -11,9 +11,23 @@ import { products } from '@/service/data'
     </h1>
     <input type="text" placeholder="Search car" v-model="searchText" />
     <br />
+    <input
+      type="radio"
+      name="sort"
+      id="sortByName"
+      value="name"
+      v-model="sortType"
+    />
     <label for="sortByName">Sort by name</label>
-    <input type="checkbox" name="sortByName" v-model="nameSort" />
-    {{ nameSort }}
+    <br />
+    <input
+      type="radio"
+      name="sort"
+      id="sortByPrice"
+      value="price"
+      v-model="sortType"
+    />
+    <label for="sortByPrice">Sort by price</label>
     <div class="products">
       <RouterLink
         to="/product"
@@ -39,34 +53,7 @@ export default {
       text: 'Hello: ',
       name: 'Romans Component',
       searchText: '',
-      nameSort: false,
-      // products: [
-      //   {
-      //     name: 'Mazeraty',
-      //     imageSrc:
-      //       'https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1707920217641.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=10&w=800',
-      //     description: 'car',
-      //     price: 20000,
-      //   },
-      //   {
-      //     name: 'Porshe',
-      //     imageSrc: 'https://storage.googleapis.com/pod_public/1300/168360.jpg',
-      //     description: 'car',
-      //     price: 15000,
-      //   },
-      //   {
-      //     name: 'Lamborginy',
-      //     imageSrc: 'https://storage.googleapis.com/pod_public/1300/173323.jpg',
-      //     description: 'car',
-      //     price: 30000,
-      //   },
-      //   {
-      //     name: 'Mustang',
-      //     imageSrc: 'https://storage.googleapis.com/pod_public/1300/121024.jpg',
-      //     description: 'car',
-      //     price: 25000,
-      //   },
-      // ],
+      sortType: '',
     }
   },
   methods: {
@@ -74,7 +61,9 @@ export default {
       let newArr = products.filter(e =>
         e.name.toLowerCase().includes(this.searchText.toLowerCase()),
       )
-      if (this.nameSort) return newArr.sort((p, n) => p.name > n.name)
+      if (this.sortType == 'name') return newArr.sort((p, n) => p.name > n.name)
+      else if (this.sortType == 'price')
+        return newArr.sort((p, n) => p.price > n.price)
       else return newArr
     },
   },

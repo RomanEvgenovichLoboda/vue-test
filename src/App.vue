@@ -1,35 +1,11 @@
 <script setup>
 import { RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-// import MyComponent from './components/MyComponent.vue'
 </script>
 
 <template>
   <header>
-    <!-- <MyComponent /> -->
     <RouterView />
   </header>
-  <!-- <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <MyComponent />
-      <HelloWorld msg="Hello Roman!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView /> -->
 </template>
 
 <style scoped>

@@ -40,10 +40,14 @@ defineProps({
   transition-duration: 150ms;
   transition-delay: 150ms;
   cursor: pointer;
-  box-shadow: 0px 0px 0px 0px rgb(79, 78, 80);
 }
 .card:hover {
   box-shadow: 5px 5px 0px 0px rgb(194, 145, 240);
+  scale: 1.01;
+}
+.card:active {
+  box-shadow: 5px 5px 0px 0px rgb(194, 145, 240);
+  scale: 0.99;
 }
 
 img {
