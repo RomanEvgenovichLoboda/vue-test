@@ -1,12 +1,13 @@
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import MyComponent from './components/MyComponent.vue'
+// import MyComponent from './components/MyComponent.vue'
 </script>
 
 <template>
   <header>
-    <MyComponent />
+    <!-- <MyComponent /> -->
+    <RouterView />
   </header>
   <!-- <header>
     <img

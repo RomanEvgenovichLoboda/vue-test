@@ -36,9 +36,18 @@ defineProps({
   padding: 5px;
   border: solid 2px blueviolet;
   border-radius: 15px;
+  transition: all;
+  transition-duration: 150ms;
+  transition-delay: 150ms;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px rgb(79, 78, 80);
 }
+.card:hover {
+  box-shadow: 5px 5px 0px 0px rgb(194, 145, 240);
+}
+
 img {
   width: 100%;
-  max-height: 150px;
+  height: 150px;
 }
 </style>
